@@ -9,11 +9,9 @@ class GenreCrawlerSpider(scrapy.Spider):
     custom_settings = {'ITEM_PIPELINES': {'ImdbDataCrawler.pipelines.ImdbdatacrawlerPipeline': 300}}
     start_urls = []
     page_count = 0
-    # movie_count = 0
     for url in open(Constants.ALL_GENRE_DUMP.value, "r"):
         url_strip = url.replace('\n', '')
         start_urls.append(f"{Constants.DOMAIN_NAME.value}{url_strip}")
-    # print(start_urls)
 
     def parse(self, response, **kwargs):
         movie_link_list = response.css(".lister-item-header").css("a::attr(href)").extract()
