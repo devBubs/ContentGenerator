@@ -8,5 +8,13 @@ import scrapy
 
 class ImdbdatacrawlerItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    release_date = scrapy.Field()
+    duration = scrapy.Field()
+    directors = scrapy.Field()
+    writers = scrapy.Field()
+    cast = scrapy.Field()
+    summary = scrapy.Field()
+    plot_keywords = scrapy.Field()
+    genres = scrapy.Field()
+    imdb_id = scrapy.Field()
